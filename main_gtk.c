@@ -44,6 +44,7 @@ static void on_modal_window_response(GtkDialog *dialog, gint response_id, gpoint
     const gchar *text_input = gtk_entry_get_text(GTK_ENTRY(entry));
     key = malloc(strlen(text_input) + 1);
     if(is_number((char*)text_input)) strcpy(key, text_input);
+    else strcpy(key, "");
     gtk_widget_destroy(GTK_WIDGET(dialog));
 
     if (strlen(key) != 0) {
